@@ -1,14 +1,19 @@
 <template>
 <div class="msite">
         <!--首页头部-->
-        <HeaderTop :title="address.name">
-           <span class="header_search" slot="left">
-            <i class="iconfont icon-chazhao"></i>
-          </span>
-           <span class="header_login" slot="right">
-            <span class="header_login_text">登录|注册</span>
-          </span>
-        </HeaderTop>
+         <HeaderTop :title="address.name">
+      <router-link class="header_search" slot="left" to="/search">
+        <i class="iconfont icon-chazhao"></i>
+      </router-link>
+      <router-link class="header_login" slot="right" :to="userInfo._id ? '/userinfo': '/login'">
+        <span class="header_login_text" v-if="!userInfo._id">
+          登录|注册
+        </span>
+        <span class="header_login_text" v-else>
+           <i class="iconfont icon-wode"></i>
+        </span>
+      </router-link>
+    </HeaderTop>
         <!--首页导航-->
         <nav class="msite_nav">
           <div class="swiper-container" v-if="categorys.length">

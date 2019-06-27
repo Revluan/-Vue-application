@@ -5,10 +5,17 @@
 </div>
 </template>
 <script>
+import {mapActions} from 'vuex'
 import FooterGuide from './components/FooterGuide/FooterGuide'
 export default{
-  mounted () { // 异 步 获 取 address
-    this.$store.dispatch('getAddress')
+  mounted () {
+    // this.$store.dispatch('getAddress')
+    this.getAddress()
+    this.getUserInfo()
+  },
+
+  methods: {
+    ...mapActions(['getAddress', 'getUserInfo'])
   },
 
   components: {

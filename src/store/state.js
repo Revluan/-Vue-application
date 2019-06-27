@@ -4,5 +4,8 @@ export default{
   address: {}, // 地 址 信 息 对 象
   categorys: [], // 分 类 数 组
   shops: [], // 商 家 数 组
-  userInfo: {} // 用户信息
+  userInfo: {}, // 用户信息
+  goods: [], // 商品列表
+  ratings: [], // 商家评价信息
+  info: {}// 商家信息
 }
